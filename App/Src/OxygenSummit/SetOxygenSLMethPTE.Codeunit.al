@@ -12,11 +12,18 @@ codeunit 50001 "SetOxygen SL Meth PTE"
     end;
 
     local procedure DoSetOxygen(var SalesLine: Record "Sales Line"; IsHandled: Boolean)
+    var
+        OxygenSetupPTE: Record "Oxygen Setup PTE";
     begin
         if IsHandled then
             exit;
 
         // Do Some Fancy Stuff
+        OxygenSetupPTE.SetLoadFields("Min. Oxygen Quantity");
+        if not OxygenSetupPTE.Get() then
+            exit;
+
+        SalesLine."Oxygen Summit PTE" := SalesLine.Quantity >= OxygenSetupPTE."Min. Oxygen Quantity";
 
     end;
 
