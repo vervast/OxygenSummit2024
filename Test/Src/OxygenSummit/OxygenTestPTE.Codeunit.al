@@ -15,10 +15,29 @@ codeunit 93202 "Oxygen Test PTE"
     #region Shared Variables
     var
         OxygenSetupPTE: Record "Oxygen Setup PTE";
-        SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         IsInitialized: Boolean;
     #endregion
+
+
+    [Test]
+    procedure SalesDocument_OxygenIsCalled()
+    var
+        SalesHeader2: Record "Sales Header";
+        SalesLine2: Record "Sales Line";
+        OxygenSpyPTE: Codeunit "OxygenSpy PTE";
+    begin
+        // [SCENARIO #123] Test oxygen minimum is met
+        Initialize();
+
+        // [WHEN] Set Sales Line Quanity more than Oxygen Quantity
+        BindSubscription(OxygenSpyPTE);
+        LibrarySales.CreateSalesDocumentWithItem(SalesHeader2, SalesLine2, SalesHeader2."Document Type"::Order, '', '', 1, '', WorkDate());
+        UnbindSubscription(OxygenSpyPTE);
+
+        // [THEN] then
+        Assert.IsTrue(OxygenSpyPTE.GetIsCalled(), 'Oxygen not called.');
+    end;
 
     [Test]
     procedure SalesDocument_OxygenIsSetTrue()
@@ -27,7 +46,8 @@ codeunit 93202 "Oxygen Test PTE"
         Initialize();
 
         // [WHEN] Set Sales Line Quanity more than Oxygen Quantity
-        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" + 1);
+        SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" + 1;
+        SalesLine.SetOxygenPTE(OxygenSetupPTE);
 
         // [THEN] then
         Assert.IsTrue(SalesLine."Oxygen Summit PTE", 'Oxygen not set.');
@@ -40,7 +60,8 @@ codeunit 93202 "Oxygen Test PTE"
         Initialize();
 
         // [WHEN] Set Sales Line Quanity less than Oxygen Quantity
-        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" - 1);
+        SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" - 1;
+        SalesLine.SetOxygenPTE(OxygenSetupPTE);
 
         // [THEN] then
         Assert.IsFalse(SalesLine."Oxygen Summit PTE", 'Oxygen is set.');
@@ -82,6 +103,5 @@ codeunit 93202 "Oxygen Test PTE"
         if IsInitialized then exit;
 
         CreateOxygenSetup();
-        LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
     end;
 }
