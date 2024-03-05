@@ -23,6 +23,7 @@ codeunit 93202 "Oxygen Test PTE"
         if not OxygenSetupPTE.Get('') then
             OxygenSetupPTE.Insert();
         OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
+        OxygenSetupPTE.Modify();
 
         // [WHEN] Create Sales Document with More than Oxigen Quantity
         LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" + 1, '', WorkDate());
@@ -47,6 +48,7 @@ codeunit 93202 "Oxygen Test PTE"
         if not OxygenSetupPTE.Get('') then
             OxygenSetupPTE.Insert();
         OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
+        OxygenSetupPTE.Modify();
 
         // [WHEN] Create Sales Document with More than Oxigen Quantity
         LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
