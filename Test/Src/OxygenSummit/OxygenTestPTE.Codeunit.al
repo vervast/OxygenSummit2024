@@ -63,6 +63,9 @@ codeunit 93202 "Oxygen Test PTE"
     begin
         LibraryTestInitialize.OnTestInitialize(Codeunit::"Oxygen Test PTE");
 
+        InitializeSharedFixtures();
+        InitializeFreshFixtures();
+
         if IsInitialized then exit;
 
         LibraryTestInitialize.OnBeforeTestSuiteInitialize(Codeunit::"Oxygen Test PTE");
@@ -70,5 +73,16 @@ codeunit 93202 "Oxygen Test PTE"
         IsInitialized := true;
         Commit();
         LibraryTestInitialize.OnAfterTestSuiteInitialize(Codeunit::"Oxygen Test PTE");
+    end;
+
+    local procedure InitializeFreshFixtures()
+    begin
+
+    end;
+
+    local procedure InitializeSharedFixtures()
+    begin
+        if IsInitialized then exit;
+
     end;
 }
