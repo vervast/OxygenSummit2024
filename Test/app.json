@@ -48,9 +48,9 @@
       "version": "23.2.0.0"
     },
     {
-      "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a98",
+      "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a99",
+      "name": "OXIGEN",
       "publisher": "iFacto Business Solutions NV",
-      "name": "COECK",
       "version": "1.0.0.0"
     },
     {
@@ -100,12 +100,6 @@
       "name": "DISTRI-LOGISTICS-TEST",
       "publisher": "iFacto Business Solutions NV",
       "version": "23.2.0.0"
-    },
-    {
-      "id": "214c9aac-eda1-4c9a-b1d1-a9ea0565d503",
-      "name": "iController",
-      "publisher": "iFacto Business Solutions NV",
-      "version": "1.0.0.0"
     },
     {
       "id": "6ea1d035-2849-492d-8b3d-8fd1c07478d9",
