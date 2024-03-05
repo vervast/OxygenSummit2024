@@ -42,6 +42,12 @@
       "version": "23.0.0.0"
     },
     {
+      "id": "6f0b528b-a4de-4ccd-a948-d1350e228e4a",
+      "publisher": "Microsoft",
+      "name": "Tests-SCM",
+      "version": "23.0.0.0"
+    },
+    {
       "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a99",
       "name": "OXIGEN",
       "publisher": "iFacto Business Solutions NV",
