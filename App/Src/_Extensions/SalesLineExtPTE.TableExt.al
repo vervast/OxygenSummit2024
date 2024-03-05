@@ -10,9 +10,16 @@ tableextension 50000 "SalesLine Ext PTE" extends "Sales Line"
 
     procedure SetOxygenPTE()
     var
+        OxygenSetupPTE: Record "Oxygen Setup PTE";
+    begin
+        OxygenSetupPTE.get();
+        Rec.SetOxygenPTE(OxygenSetupPTE);
+    end;
+
+    internal procedure SetOxygenPTE(OxygenSetupPTE: Record "Oxygen Setup PTE")
+    var
         SetOxygenSLMethPTE: Codeunit "SetOxygen SL Meth PTE";
     begin
-        SetOxygenSLMethPTE.SetOxygen(Rec);
-
+        SetOxygenSLMethPTE.SetOxygen(Rec, OxygenSetupPTE);
     end;
 }
