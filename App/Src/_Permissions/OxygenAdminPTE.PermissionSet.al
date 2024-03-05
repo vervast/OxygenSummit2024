@@ -1,4 +1,4 @@
-permissionset 80000 "Oxygen Admin PTE"
+permissionset 50000 "Oxygen Admin PTE"
 {
     Assignable = true;
     Permissions =

@@ -7,6 +7,5 @@ codeunit 93201 "TEST Test Upgrade PTE"
         TESTInstall: Codeunit "TEST Install PTE";
     begin
         TESTInstall.SetupTestSuite();
-        TESTInstall.CreateDefaultSetups();
     end;
 }

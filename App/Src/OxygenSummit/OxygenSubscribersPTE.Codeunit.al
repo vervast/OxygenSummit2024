@@ -1,4 +1,4 @@
-codeunit 80000 "Oxygen Subscribers PTE"
+codeunit 50000 "Oxygen Subscribers PTE"
 {
     SingleInstance = true;
 

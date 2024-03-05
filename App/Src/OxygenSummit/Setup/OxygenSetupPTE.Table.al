@@ -1,4 +1,4 @@
-table 80002 "Oxygen Setup PTE"
+table 50000 "Oxygen Setup PTE"
 {
     DataClassification = ToBeClassified;
 
@@ -8,11 +8,10 @@ table 80002 "Oxygen Setup PTE"
         {
             Caption = 'Primary Key';
         }
-        field(2; "Min. Oxygen Quantity"; Decimal)
+        field(2; "Min. Oxygen Quantity"; Integer)
         {
             Caption = 'Min. Oxygen Quantity';
         }
-
     }
 
     keys

@@ -1,4 +1,4 @@
-tableextension 80001 "SalesLine Ext PTE" extends "Sales Line"
+tableextension 50000 "SalesLine Ext PTE" extends "Sales Line"
 {
     fields
     {

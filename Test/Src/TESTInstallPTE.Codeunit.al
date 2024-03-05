@@ -5,7 +5,6 @@ codeunit 93200 "TEST Install PTE"
     trigger OnInstallAppPerCompany()
     begin
         SetupTestSuite();
-        CreateDefaultSetups();
     end;
 
     procedure SetupTestSuite()
@@ -46,33 +45,4 @@ codeunit 93200 "TEST Install PTE"
         // From v18.0:
         TestSuiteMgt.SelectTestMethodsByRange(ALTestSuite, ObjectFilter);
     end;
-
-    procedure CreateCoeckTestLocations()
-    var
-        UpgradeTag: Codeunit "Upgrade Tag";
-    begin
-        if UpgradeTag.HasUpgradeTag(CreateCoeckTestLocationsLbl) then
-            exit;
-
-
-        UpgradeTag.SetUpgradeTag(CreateCoeckTestLocationsLbl);
-    end;
-
-    procedure CreateDefaultSetups()
-    var
-        LibraryWarehouseBSE: Codeunit "Library - Warehouse BSE";
-        UpgradeTag: Codeunit "Upgrade Tag";
-    begin
-        if UpgradeTag.HasUpgradeTag(CreateDefaultSetupsLbl) then
-            exit;
-
-        LibraryWarehouseBSE.InitWarehouseSetupIfNecessary();
-
-        UpgradeTag.SetUpgradeTag(CreateDefaultSetupsLbl);
-    end;
-
-    var
-        CreateCoeckTestLocationsLbl: Label 'iFacto-CreateCoeckTestLocations-20221229', Locked = true;
-        CreateDefaultSetupsLbl: Label 'iFacto-CreateDefaultSetups-20230305', Locked = true;
-
 }

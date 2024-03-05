@@ -1,4 +1,4 @@
-codeunit 80002 "SetOxygen SL Meth PTE"
+codeunit 50001 "SetOxygen SL Meth PTE"
 {
     internal procedure SetOxygen(var SalesLine: Record "Sales Line")
     var
