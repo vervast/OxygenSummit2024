@@ -1,0 +1,212 @@
+{
+  "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a98",
+  "name": "COECK",
+  "publisher": "iFacto Business Solutions NV",
+  "brief": "",
+  "description": "iFacto COECK app",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "http://www.ifacto.be",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "e70460bf-e5f6-482f-99a4-eec7e3f61127",
+      "name": "Distri Sales and Purchase App",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "c73e3748-378e-49ee-a725-94dc1193ea4a",
+      "name": "iFacto Financials (Belgium)",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "70237ab8-4316-4404-bc9a-7f4c43bd5dbd",
+      "name": "iFacto Base",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "1823327e-f1e6-4570-9ad1-8e6c0e777e75",
+      "name": "Distri WMS",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "5965a7d1-6c60-4b5a-84f4-b5e89054f4b3",
+      "name": "Distri Eform",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "15a1130f-4a82-453d-8122-1e7a193656ee",
+      "name": "Distri Logistics App",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "f16325ad-b36a-4a42-978a-916a28fc7bfe",
+      "name": "Distri WMS Scanning",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "b441d672-edce-48cf-881f-55574db8c780",
+      "name": "iFacto REST Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "4d3b7097-2532-4fbb-8ff0-774e8a1911f4",
+      "name": "iFacto Complaint Management",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "214c9aac-eda1-4c9a-b1d1-a9ea0565d503",
+      "name": "iController",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "6ea1d035-2849-492d-8b3d-8fd1c07478d9",
+      "name": "Single Logistics Multi Finance",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "3a8193ce-d267-475c-994f-04b692a79978",
+      "name": "Distri Transaction Document Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "1d5153ea-30de-407c-b4ff-7fb2ca77ea9a",
+      "name": "Distri Event Communication Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "c46883b6-4e79-4e37-886b-b83831c5f1e1",
+      "name": "Distri EDI",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "8b5dd5da-a635-4f29-8ea2-f5fafc956ba7",
+      "name": "Distri Pack and Ship",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "17487d0f-5e6e-4cca-836d-a6f4e6eb7bbe",
+      "name": "Distri Logistics Carrier",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "63c792ec-b3d2-47e5-b884-b7471dff2f4b",
+      "name": "iFacto Licensing",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "2d1d1d89-8722-45af-a8f7-f2f8aa043767",
+      "name": "iFacto Environments",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "9afbefea-27b5-40b3-b094-1f3e6728a1a6",
+      "name": "Distri Print Label Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "d4c8ef65-6971-4d78-8375-77126c7269a6",
+      "publisher": "iFacto Business Solutions NV",
+      "name": "Distri WMS Scanning Print Label",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "cf7b3be7-9085-43bb-9c12-8a6c8a496fee",
+      "name": "iFacto Print Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "3d711d46-5090-46ba-94c1-22524ffc10f6",
+      "name": "iFacto Container Planning",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "30bedc81-7163-442e-8b8d-fb40a0ee778f",
+      "name": "iFacto Container Planning and Logistics",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "8e214a6d-c2df-4bb2-bada-49f064e52c04",
+      "name": "iFacto File Framework",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "8dd53d5c-7659-47a6-a10d-71b912084283",
+      "name": "Distri Sales and Purchase Logistics Carrier",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "15103220-2968-4feb-901d-15dffa41c1ac",
+      "name": "iFacto Complaint, Sales and Purch",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "dc890dde-aed0-44e4-90ed-7b6c728e5b94",
+      "name": "Distri Extended Tracking",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "174dfb5b-a07f-4cb9-bbfd-a9b5ae7d3b0e",
+      "name": "iFacto Financials",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    },
+    {
+      "id": "6ffdb5bc-fc7c-4137-9ee0-4bacc43f2da8",
+      "name": "iFacto Data Check",
+      "publisher": "iFacto Business Solutions NV",
+      "version": "23.2.0.0"
+    }
+  ],
+  "screenshots": [],
+  "application": "23.0.0.0",
+  "platform": "23.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50819
+    },
+    {
+      "from": 60000,
+      "to": 60001
+    }
+  ],
+  "features": [
+    "TranslationFile"
+  ],
+  "runtime": "11.0",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "target": "Cloud"
+}
