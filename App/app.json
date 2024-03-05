@@ -1,9 +1,9 @@
 {
-  "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a98",
-  "name": "COECK",
+  "id": "e4d1c3da-87dd-4ba7-aedc-1e8ea7737a99",
+  "name": "OXIGEN",
   "publisher": "iFacto Business Solutions NV",
   "brief": "",
-  "description": "iFacto COECK app",
+  "description": "OXIGEN Summit app",
   "version": "1.0.0.0",
   "privacyStatement": "",
   "EULA": "",
@@ -191,12 +191,8 @@
   "platform": "23.0.0.0",
   "idRanges": [
     {
-      "from": 50000,
-      "to": 50819
-    },
-    {
-      "from": 60000,
-      "to": 60001
+      "from": 80000,
+      "to": 80819
     }
   ],
   "features": [

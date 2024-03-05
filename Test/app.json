@@ -1,9 +1,9 @@
 {
-  "id": "ab8ceb91-2f20-418f-ba63-fc09b612c4d2",
-  "name": "COECK-TEST",
+  "id": "ab8ceb91-2f20-418f-ba63-fc09b612c4d9",
+  "name": "OXIGEN-TEST",
   "publisher": "iFacto Business Solutions NV",
   "brief": "",
-  "description": "iFacto COECK Test app",
+  "description": "OXIGEN Summit Test app",
   "version": "1.0.0.0",
   "privacyStatement": "",
   "EULA": "",
@@ -335,8 +335,8 @@
   "platform": "23.0.0.0",
   "idRanges": [
     {
-      "from": 93200,
-      "to": 93499
+      "from": 80200,
+      "to": 80499
     }
   ],
   "features": [
