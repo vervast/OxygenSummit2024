@@ -4,29 +4,30 @@ codeunit 93202 "Oxygen Test PTE"
 
     // [FEATURE] [Oxigen Summit]
 
+    #region Libraries
     var
-        IsInitialized: Boolean;
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryRandom: Codeunit "Library - Random";
+        Assert: Codeunit "Assert";
 
-    [Test]
-    procedure SalesDocument_OxygenIsSetTrue()
+    #endregion
+
+    #region Shared Variables
     var
         OxygenSetupPTE: Record "Oxygen Setup PTE";
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
-        LibrarySales: Codeunit "Library - Sales";
-        LibraryRandom: Codeunit "Library - Random";
-        Assert: Codeunit "Assert";
+        IsInitialized: Boolean;
+    #endregion
+
+    [Test]
+    procedure SalesDocument_OxygenIsSetTrue()
     begin
         // [SCENARIO #123] Test oxygen minimum is met
         Initialize();
-        // [GIVEN] Create Setup
-        if not OxygenSetupPTE.Get('') then
-            OxygenSetupPTE.Insert();
-        OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
-        OxygenSetupPTE.Modify();
 
-        // [WHEN] Create Sales Document with More than Oxigen Quantity
-        LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" + 1, '', WorkDate());
+        // [WHEN] Set Sales Line Quanity more than Oxygen Quantity
+        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" + 1);
 
         // [THEN] then
         Assert.IsTrue(SalesLine."Oxygen Summit PTE", 'Oxygen not set.');
@@ -34,27 +35,23 @@ codeunit 93202 "Oxygen Test PTE"
 
     [Test]
     procedure SalesDocument_OxygenIsSetFalse()
-    var
-        OxygenSetupPTE: Record "Oxygen Setup PTE";
-        SalesHeader: Record "Sales Header";
-        SalesLine: Record "Sales Line";
-        LibrarySales: Codeunit "Library - Sales";
-        LibraryRandom: Codeunit "Library - Random";
-        Assert: Codeunit "Assert";
     begin
         // [SCENARIO #123] Test oxygen minimum is met
         Initialize();
-        // [GIVEN] Create Setup
+
+        // [WHEN] Set Sales Line Quanity less than Oxygen Quantity
+        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" - 1);
+
+        // [THEN] then
+        Assert.IsFalse(SalesLine."Oxygen Summit PTE", 'Oxygen is set.');
+    end;
+
+    local procedure CreateOxygenSetup()
+    begin
         if not OxygenSetupPTE.Get('') then
             OxygenSetupPTE.Insert();
         OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
         OxygenSetupPTE.Modify();
-
-        // [WHEN] Create Sales Document with More than Oxigen Quantity
-        LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
-
-        // [THEN] then
-        Assert.IsFalse(SalesLine."Oxygen Summit PTE", 'Oxygen is set.');
     end;
 
     local procedure Initialize()
@@ -84,5 +81,7 @@ codeunit 93202 "Oxygen Test PTE"
     begin
         if IsInitialized then exit;
 
+        CreateOxygenSetup();
+        LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
     end;
 }
