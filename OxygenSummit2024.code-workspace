@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "App"
+    },
+    {
+      "path": "Test"
+    }
+  ],
+  "settings": {
+    "al.packageCachePath": ".\\.alpackages",
+    "al.backgroundCodeAnalysis": "File",
+    "git.suggestSmartCommit": false,
+    "git.enableSmartCommit": false,
+    "powershell.cwd": "d:\\Databases\\AL\\OxygenSummit2024\\Test",
+    "al-test-runner.sendDebugTelemetry": false
+  }
+}
