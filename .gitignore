@@ -1,0 +1,8 @@
+App/*.app
+Test/*.app
+launch.json
+Secret*.*
+*.g.xlf
+rad.json
+**/.alcache/
+**/.alpackages/
