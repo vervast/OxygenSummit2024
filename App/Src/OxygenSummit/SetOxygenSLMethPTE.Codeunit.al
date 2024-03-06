@@ -1,5 +1,15 @@
 codeunit 50001 "SetOxygen SL Meth PTE"
 {
+    internal procedure SetOxygen(var SalesLine: Record "Sales Line")
+    var
+        OxygenSetupPTE: Record "Oxygen Setup PTE";
+    begin
+        if not OxygenSetupPTE.Get() then
+            exit;
+
+        SetOxygen(SalesLine, OxygenSetupPTE);
+    end;
+
     internal procedure SetOxygen(var SalesLine: Record "Sales Line"; OxygenSetupPTE: Record "Oxygen Setup PTE")
     var
         IsHandled: Boolean;
