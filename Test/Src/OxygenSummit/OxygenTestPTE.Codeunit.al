@@ -15,7 +15,6 @@ codeunit 93202 "Oxygen Test PTE"
     #region Shared Variables
     var
         OxygenSetupPTE: Record "Oxygen Setup PTE";
-        SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         IsInitialized: Boolean;
     #endregion
@@ -75,12 +74,11 @@ codeunit 93202 "Oxygen Test PTE"
     local procedure InitializeFreshFixtures()
     begin
         Clear(OxygenSetupPTE);
+        Clear(SalesLine);
     end;
 
     local procedure InitializeSharedFixtures()
     begin
         if IsInitialized then exit;
-
-        LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
     end;
 }
