@@ -26,6 +26,9 @@ codeunit 93202 "Oxygen Test PTE"
         // [SCENARIO #123] Test oxygen minimum is met
         Initialize();
 
+        // [GIVEN] Set Setup
+        OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
+
         // [WHEN] Set Sales Line Quanity more than Oxygen Quantity
         SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" + 1;
         SalesLine.SetOxygenPTE(OxygenSetupPTE);
@@ -40,20 +43,15 @@ codeunit 93202 "Oxygen Test PTE"
         // [SCENARIO #123] Test oxygen minimum is met
         Initialize();
 
+        // [GIVEN] Set Setup
+        OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
+
         // [WHEN] Set Sales Line Quanity less than Oxygen Quantity
         SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" - 1;
         SalesLine.SetOxygenPTE(OxygenSetupPTE);
 
         // [THEN] then
         Assert.IsFalse(SalesLine."Oxygen Summit PTE", 'Oxygen is set.');
-    end;
-
-    local procedure CreateOxygenSetup()
-    begin
-        if not OxygenSetupPTE.Get('') then
-            OxygenSetupPTE.Insert();
-        OxygenSetupPTE."Min. Oxygen Quantity" := LibraryRandom.RandIntInRange(100, 200);
-        OxygenSetupPTE.Modify();
     end;
 
     local procedure Initialize()
@@ -76,14 +74,13 @@ codeunit 93202 "Oxygen Test PTE"
 
     local procedure InitializeFreshFixtures()
     begin
-
+        Clear(OxygenSetupPTE);
     end;
 
     local procedure InitializeSharedFixtures()
     begin
         if IsInitialized then exit;
 
-        CreateOxygenSetup();
         LibrarySales.CreateSalesDocumentWithItem(SalesHeader, SalesLine, SalesHeader."Document Type"::Order, '', '', OxygenSetupPTE."Min. Oxygen Quantity" - 1, '', WorkDate());
     end;
 }
