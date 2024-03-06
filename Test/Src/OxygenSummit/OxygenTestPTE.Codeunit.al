@@ -27,7 +27,8 @@ codeunit 93202 "Oxygen Test PTE"
         Initialize();
 
         // [WHEN] Set Sales Line Quanity more than Oxygen Quantity
-        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" + 1);
+        SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" + 1;
+        SalesLine.SetOxygenPTE(OxygenSetupPTE);
 
         // [THEN] then
         Assert.IsTrue(SalesLine."Oxygen Summit PTE", 'Oxygen not set.');
@@ -40,7 +41,8 @@ codeunit 93202 "Oxygen Test PTE"
         Initialize();
 
         // [WHEN] Set Sales Line Quanity less than Oxygen Quantity
-        SalesLine.Validate(Quantity, OxygenSetupPTE."Min. Oxygen Quantity" - 1);
+        SalesLine.Quantity := OxygenSetupPTE."Min. Oxygen Quantity" - 1;
+        SalesLine.SetOxygenPTE(OxygenSetupPTE);
 
         // [THEN] then
         Assert.IsFalse(SalesLine."Oxygen Summit PTE", 'Oxygen is set.');
